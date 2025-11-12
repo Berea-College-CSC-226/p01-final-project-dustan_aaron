@@ -2,9 +2,6 @@
 
 ## Instructions
 
-❗️Exclamation Marks ❗️indicate action items; you should remove these emoji as you complete/update the items which 
-  they accompany. (This means that your final README should have no ❗️in it!)
-
 **Author(s)**: Stephen Aaron Robinson & Dustan Webb
 
 **Google Doc Link**: https://docs.google.com/document/d/1hF_YyhnfbonXv3Gwq11vM1z6Taylc1I5qp7h2871Wzk/edit?usp=sharing
@@ -17,15 +14,9 @@
 
 **Purpose**: The user will get to choose between 3 games to play, including The Game of Nim, Rock Paper Scissors, and Mastermind.
 
-**Source Assignment(s)**: HW06: The Game of Nim
+**Source Assignment(s)**: HW06: The Game of Nim (game_of_nim.py)
 
 **CRC Card(s)**:
-  - Create a CRC card for each class that your project will implement.
-  - See this link for a sample CRC card and a template to use for your own cards (you will have to make a copy to edit):
-    [CRC Card Example](https://docs.google.com/document/d/1JE_3Qmytk_JGztRqkPXWACJwciPH61VCx3idIlBCVFY/edit?usp=sharing)
-  - Tables in markdown are not easy, so we suggest saving your CRC card as an image and including the image(s) in the 
-    README. You can do this by saving an image in the repository and linking to it. See the sample CRC card below - 
-    and REPLACE it with your own:
   
 ![](image/MM_CRC.png)
 ![](image/RPS_CRC.png)
@@ -39,7 +30,9 @@ into your own, following the process we've discussed in previous assignments, th
 
 ```
     Branch 1 starting name: Robinson_Main
+        Branch 1 assignments: Mastermind, Game of Nim, Game Selection
     Branch 2 starting name: Dwebb28
+        Branch 2 assignments: Rock Paper Scissors, Game of Nim, Game Selection
 ```
 
 ### References 
