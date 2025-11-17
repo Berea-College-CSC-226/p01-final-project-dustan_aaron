@@ -48,13 +48,14 @@ The Game of Nim, Rock Paper Scissors, and Mastermind games are not our ideas, bu
 
 ## Milestone 2: Code Setup and Issue Queue
 
-❗Most importantly, keep your issue queue up to date, and focus on your code. 🙃
+Most importantly, keep your issue queue up to date, and focus on your code. 🙃
 
-❗Reflect on what you’ve done so far. How’s it going? Are you feeling behind/ahead? What are you worried about? 
+Reflect on what you’ve done so far. How’s it going? Are you feeling behind/ahead? What are you worried about? 
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
 
 ```
-    **Replace this text with your reflection
+    Stephen Aaron Robinson: 11/17/2025
+        I've ran into a few issues so far, but ultimately feel good about how the project is going.
 ```
 
 ---
