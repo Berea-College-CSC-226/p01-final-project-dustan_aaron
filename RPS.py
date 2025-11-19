@@ -22,10 +22,15 @@ class RPS:
         self.window.title("Rock, Paper, Scissors")
         self.title_lable = tk.Label(self.window, text="C'mon looser, choose your move.", font =("Bold", 16))
         self.title_lable.pack()#below this is me getting the buttons looking correct
-        self.rock_button = tk.Button(self.window, text="rock", width = 15, self.play("rock"))
-        self.paper_button = tk.Button(self.window, text = "paper", width = 15, self.play("paper") )
+        self.rock_button = tk.Button(self.window, text="rock", width = 15, command=lambda: self.play("rock"))
+        self.paper_button = tk.Button(self.window, text = "paper", width = 15, command=lambda: self.play("paper") )
         self.scissors_button = tk.Button(self.window, text = "scissors", width = 15, command=lambda: self.play("scissors"))
-        self.rock_button.pack()
+        self.rock_button.pack()#command lambda is something I found on google in tkinter explorations that is different
+#buttons that calls to the same function but has can produce a different output. With Rock paper scissors being
+#same function but different output I needed to find something.
+#tkinter button that calls the same function but can produce two different outputs (what I searched) google output:You
+#can make a Tkinter button call the same function but produce different outputs by passing an argument to the function when creating the button.
+#This is typically done using lambda or functools.partial.
         self.paper_button.pack()#packing the window in
         self.scissors_button.pack()
         self.result_label = tk.Label(self.window, text="Result:", font =("Bold", 16))
