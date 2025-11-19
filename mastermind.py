@@ -14,30 +14,38 @@ import tkinter.ttk as ttk
 class Mastermind:
     def __init__(self):
         self.root = tk.Tk()
-        self.root.title("Mastermind")
+        self.root.title("Main Menu")
         self.root.minsize(750, 400)
         self.root.maxsize(750, 400)
         self.root.geometry("750x400+250+50")
+        self.pegs = 4
+        self.guesses = 4
+
+        title = tk.Label(self.root, text="MASTERMIND", font=("Times New Roman", 30))
+        title.grid(row=0, column=0, columnspan=2, sticky=tk.NSEW)
+
+        settings = tk.Button(self.root, text="settings", command=self.settings)
+        settings.grid(column=0, row=2)
+
+        game_start = tk.Button(self.root, text="Play", command=self.game_loop)
+        game_start.grid(column=0, row=1)
         self.root.mainloop()
 
-        self.pegs = 4
-        settings = tk.Button(self.root, text="settings", command=self.settings())
-        settings.grid(column=0, row=0)
-        print(self.pegs)
-        self.random_pattern()
 
 
     def peg_setting(self, event):
         self.pegs = event.widget.get()
-        print(self.pegs)
 
     def guess_setting(self, event):
         self.guesses = event.widget.get()
-        print(self.guesses)
 
     def settings(self):
         settings_root = tk.Toplevel(self.root)
         settings_root.title("Welcome")
+        settings_root.minsize(400, 200)
+        settings_root.maxsize(600, 300)
+
+
 
         welcome_message = tk.Label(settings_root, text="Welcome to Mastermind. In this game, you must correctly guess the color combination of a number of pegs.")
         welcome_message.grid(row=0, column=0, columnspan=3)
@@ -71,9 +79,22 @@ class Mastermind:
                 color = ("yellow")
             self.pattern.append(color)
 
+
+    def game_loop(self):
+        game = tk.Toplevel(self.root)
+        game.title("Mastermind")
+        self.random_pattern()
+
+        placement = 0
+        for color in self.pattern:
+            new_peg = tk.Button(game, background=color, width=1, height=1)
+            new_peg.grid(row=0, column=placement, padx=5, pady=10)
+            placement += 1
+
+
 def main():
     game = Mastermind()
-    print(game.pattern)
+
 if __name__ == '__main__':
     main()
 
