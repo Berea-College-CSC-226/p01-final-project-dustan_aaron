@@ -54,7 +54,7 @@ Reflect on what you’ve done so far. How’s it going? Are you feeling behind/a
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
 
 ```
-    Stephen Aaron Robinson: 11/17/2025
+    Stephen Aaron Robinson: 11/17/2025 
         I've ran into a few issues so far, but ultimately feel good about how the project is going.
 ```
 
