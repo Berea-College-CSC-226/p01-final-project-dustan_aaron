@@ -12,7 +12,11 @@
 
 ️**Title**: 3 in 1, Games of the Year Edition
 
-**Purpose**: The user will get to choose between 3 games to play, including The Game of Nim, Rock Paper Scissors, and Mastermind.
+**Purpose**: The user will get to choose between 3 games to play, including The Game of Nim, Rock Paper Scissors,
+and Mastermind. The 3 games will have a main menu, the main menu is going to have a one sentence slight description of 
+how the game is going to work and what the user will be doing. The main menu will be a seperate file and the master for 
+all the games. All the games will be separated in files and will be short and sweet but with this being a final project
+all the games together would take some time to play but all in all should be a blast. 
 
 **Source Assignment(s)**: HW06: The Game of Nim (game_of_nim.py)
 

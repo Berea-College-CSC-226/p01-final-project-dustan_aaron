@@ -4,7 +4,7 @@
 #
 # T12: Events and GUIs
 #
-# Purpose: Make a playable rock paper scissors game to be put in our mastery game
+# Purpose: Make a playable rock paper scissors game to be put in our mastery game.
 #
 # Original code written by Dustan M. Webb
 #
@@ -22,8 +22,8 @@ class RPS:
         self.window.title("Rock, Paper, Scissors")
         self.title_lable = tk.Label(self.window, text="C'mon looser, choose your move.", font =("Bold", 16))
         self.title_lable.pack()#below this is me getting the buttons looking correct
-        self.rock_button = tk.Button(self.window, text="rock", width = 15, command=lambda: self.play("rock"))
-        self.paper_button = tk.Button(self.window, text = "paper", width = 15, command =lambda: self.play("paper") )
+        self.rock_button = tk.Button(self.window, text="rock", width = 15, self.play("rock"))
+        self.paper_button = tk.Button(self.window, text = "paper", width = 15, self.play("paper") )
         self.scissors_button = tk.Button(self.window, text = "scissors", width = 15, command=lambda: self.play("scissors"))
         self.rock_button.pack()
         self.paper_button.pack()#packing the window in
@@ -36,16 +36,15 @@ class RPS:
         options = ["rock", "paper", "scissors"]
         computer_choice = random.choice(options)
         if player_choice == computer_choice:
-            "Run it back bru you trash."
+            result = "Run it back bru you trash."
         elif (player_choice == "rock" and computer_choice == "scissors") or \
-                 (player_choice == "paper" and computer_choice == "rock") or \
-                 (player_choice == "scissors" and computer_choice == "paper"):
-            result = "I'm now going to blow up this computer because you won."
-        else:
-            result = "suck on these fat computer hardrive nuts looser."
+                (player_choice == "paper" and computer_choice == "rock") or \
+                (player_choice == "scissors" and computer_choice == "paper"):
+            result = "This computer will now self destruct because you beat me."
+        else:# gets players input, outputs what the computer is picking.
+            result = "Suck on these computer hard drive nuts."
             self.result_label.config(
-                text=f"You chose: {player_choice}\n"
-                     f"Computer chose: {computer_choice}\n\n{result}"
+
             )
 
 root = tk.Tk()
