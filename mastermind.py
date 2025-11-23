@@ -10,6 +10,8 @@
 import random
 import tkinter as tk
 import tkinter.ttk as ttk
+from time import sleep
+
 
 class Mastermind:
     def __init__(self):
@@ -22,13 +24,13 @@ class Mastermind:
         self.guesses = 4
 
         title = tk.Label(self.root, text="MASTERMIND", font=("Times New Roman", 30))
-        title.grid(row=0, column=0, columnspan=2, sticky=tk.NSEW)
+        title.grid(row=0, column=0, columnspan=2, sticky=tk.EW, padx=250, pady=10)
 
         settings = tk.Button(self.root, text="settings", command=self.settings)
-        settings.grid(column=0, row=2)
+        settings.grid(column=0, row=2, padx=350, pady=5)
 
         game_start = tk.Button(self.root, text="Play", command=self.game_loop)
-        game_start.grid(column=0, row=1)
+        game_start.grid(column=0, row=1, padx=350, pady=5)
         self.root.mainloop()
 
 
@@ -53,14 +55,14 @@ class Mastermind:
         peg_set_label = tk.Label(settings_root, text="How many pegs do you wish to guess?")
         peg_set_label.grid(row=1, column=0, pady=10)
         peg_entry = tk.Entry(settings_root)
-        peg_entry.insert(0, "4")
+        peg_entry.insert(0, self.pegs)
         peg_entry.grid(row=1, column=1, pady=10)
         peg_entry.bind("<Return>", self.peg_setting)
 
         guess_set_label = tk.Label(settings_root, text="How many guesses do you wish to have?")
         guess_set_label.grid(row=2, column=0, pady=10)
         guess_entry = tk.Entry(settings_root)
-        guess_entry.insert(0, "3")
+        guess_entry.insert(0, self.guesses)
         guess_entry.grid(row=2, column=1, pady=10)
         guess_entry.bind("<Return>", self.guess_setting)
 
@@ -79,17 +81,52 @@ class Mastermind:
                 color = ("yellow")
             self.pattern.append(color)
 
+    def temp_guess_list(self, event):
+        self.guess_list.append(event.widget.get())
+        if len(self.guess_list) == self.pegs:
+            self.load_pegs()
+            self.guess_list.clear()
+            self.game.update()
 
-    def game_loop(self):
-        game = tk.Toplevel(self.root)
-        game.title("Mastermind")
-        self.random_pattern()
 
+    def guess_input(self):
+        self.guess_window = tk.Toplevel(self.root)
+        self.guess_window.title("Input your guess")
+
+        guess = tk.Entry(self.guess_window)
+        guess.insert(0, "Enter your guess.")
+        guess.grid(row=0, column=0)
+        guess.bind("<Return>", self.temp_guess_list)
+
+
+    def load_pegs(self):
         placement = 0
         for color in self.pattern:
-            new_peg = tk.Button(game, background=color, width=1, height=1)
-            new_peg.grid(row=0, column=placement, padx=5, pady=10)
+            if len(self.guess_list) != self.pegs:
+                new_peg = tk.Button(self.game, background="white", width=1, height=1)
+                new_peg.grid(row=0, column=placement, padx=5, pady=10)
+            else:
+                if self.guess_list[placement] == color:
+                    new_peg = tk.Button(self.game, background=color, width=1, height=1)
+                    new_peg.grid(row=0, column=placement, padx=5, pady=10)
+                else:
+                    new_peg = tk.Button(self.game, background="white", width=1, height=1)
+                    new_peg.grid(row=0, column=placement, padx=5, pady=10)
             placement += 1
+
+
+    def game_loop(self):
+        self.game = tk.Toplevel(self.root)
+        self.game.title("Mastermind")
+
+        self.random_pattern()
+
+
+        self.guess_list = []
+
+        self.guess_input()
+
+
 
 
 def main():
