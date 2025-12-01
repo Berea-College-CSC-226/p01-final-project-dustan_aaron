@@ -88,30 +88,87 @@ class Mastermind:
             self.guess_list.clear()
             self.game.update()
 
+    def r_button_handler(self):
+        self.guess_list.append("red")
+        if len(self.guess_list) == len(self.pattern):
+            for i in self.current_buttons:
+                i.destroy()
+            self.load_pegs()
+            self.game.update()
+            self.guess_list.clear()
+            #print("Updated")
+
+    def y_button_handler(self):
+        self.guess_list.append("yellow")
+        if len(self.guess_list) == len(self.pattern):
+            for i in self.current_buttons:
+                i.destroy()
+            self.load_pegs()
+            self.game.update()
+            self.guess_list.clear()
+            #print("Updated")
+
+    def b_button_handler(self):
+        self.guess_list.append("blue")
+        if len(self.guess_list) == len(self.pattern):
+            for i in self.current_buttons:
+                i.destroy()
+            self.load_pegs()
+            self.game.update()
+            self.guess_list.clear()
+            #print("Updated")
+
+    def g_button_handler(self):
+        self.guess_list.append("green")
+        if len(self.guess_list) == len(self.pattern):
+            for i in self.current_buttons:
+                i.destroy()
+            self.load_pegs()
+            self.game.update()
+            self.guess_list.clear()
+            #print("Updated")
 
     def guess_input(self):
         self.guess_window = tk.Toplevel(self.root)
         self.guess_window.title("Input your guess")
 
+        r_button = tk.Button(self.guess_window, background="red", command=self.r_button_handler)
+        r_button.grid(row=0, column=0, padx=5, pady=5)
+
+        y_button = tk.Button(self.guess_window, background="yellow", command=self.y_button_handler)
+        y_button.grid(row=0, column=1, padx=5, pady=5)
+
+        b_button = tk.Button(self.guess_window, background="blue", command=self.b_button_handler)
+        b_button.grid(row=0, column=2, padx=5, pady=5)
+
+        g_button = tk.Button(self.guess_window, background="green", command=self.g_button_handler)
+        g_button.grid(row=0, column=3, padx=5, pady=5)
+        """
+        #Testing guesses
         guess = tk.Entry(self.guess_window)
         guess.insert(0, "Enter your guess.")
         guess.grid(row=0, column=0)
         guess.bind("<Return>", self.temp_guess_list)
+        """
 
 
     def load_pegs(self):
         placement = 0
+        self.current_buttons = []
         for color in self.pattern:
-            if len(self.guess_list) != self.pegs:
+            if len(self.guess_list) != len(self.pattern):
                 new_peg = tk.Button(self.game, background="white", width=1, height=1)
                 new_peg.grid(row=0, column=placement, padx=5, pady=10)
+                self.current_buttons.append(new_peg)
             else:
                 if self.guess_list[placement] == color:
                     new_peg = tk.Button(self.game, background=color, width=1, height=1)
                     new_peg.grid(row=0, column=placement, padx=5, pady=10)
+                    self.current_buttons.append(new_peg)
                 else:
                     new_peg = tk.Button(self.game, background="white", width=1, height=1)
                     new_peg.grid(row=0, column=placement, padx=5, pady=10)
+                    self.current_buttons.append(new_peg)
             placement += 1
 
 
@@ -120,10 +177,10 @@ class Mastermind:
         self.game.title("Mastermind")
 
         self.random_pattern()
-
+        #print(self.pattern)
 
         self.guess_list = []
-
+        self.load_pegs()
         self.guess_input()
 
 
