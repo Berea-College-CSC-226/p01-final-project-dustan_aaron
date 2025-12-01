@@ -45,7 +45,7 @@ class RPS:
         if player_choice == computer_choice:
             result = "Run it back bru you trash."
         elif (player_choice == "rock" and computer_choice == "scissors") or \
-                (player_choice == "Paper" and computer_choice == "rock") or \
+                (player_choice == "paper" and computer_choice == "rock") or \
                 (player_choice == "scissors" and computer_choice == "paper"):
             result = "This computer will now self destruct because you beat me."
         else:# gets players input, outputs what the computer is picking.
