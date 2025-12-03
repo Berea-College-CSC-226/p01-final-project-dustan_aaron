@@ -22,9 +22,9 @@ class RPS:
         self.window.title("Rock, Paper, Scissors")
         self.title_lable = tk.Label(self.window, text="C'mon looser, choose your move.", font =("Bold", 16))
         self.title_lable.pack()#below this is me getting the buttons looking correct
-        self.rock_button = tk.Button(self.window, text="Rock", width = 15, command=lambda: self.play("Rock"))
-        self.paper_button = tk.Button(self.window, text = "Paper", width = 15, command=lambda: self.play("Paper") )
-        self.scissors_button = tk.Button(self.window, text = "Scissors", width = 15, command=lambda: self.play("Scissors"))
+        self.rock_button = tk.Button(self.window, text="Rock", width = 17, command=lambda: self.play("Rock"))
+        self.paper_button = tk.Button(self.window, text = "Paper", width = 17, command=lambda: self.play("Paper") )
+        self.scissors_button = tk.Button(self.window, text = "Scissors", width = 17, command=lambda: self.play("Scissors"))
         self.rock_button.pack()#command lambda is something I found on google in tkinter explorations that is different
 #buttons that calls to the same function but has can produce a different output. With Rock paper scissors being
 #same function but different output I needed to find something.
@@ -34,12 +34,14 @@ class RPS:
         self.paper_button.pack()#packing the window in
         self.scissors_button.pack()
         self.result_label = tk.Label(self.window, text="Result:", font =("Bold", 16))
+        self.result_lable = tk.lable(self.window, text ="Result", font =("Bold", 16))
         self.result_label.pack()
+
 
 
     def play(self, player_choice): #now onto the fun part of making the game, the actual playing part.
         player_choice = player_choice.lower()
-
+#Very tricky, this is honestly where I had the most trouble, for some reason it would only print the Computer wins result.
         options = ["rock", "paper", "scissors"]
         computer_choice = random.choice(options).lower()
         if player_choice == computer_choice:
@@ -47,7 +49,8 @@ class RPS:
         elif (player_choice == "rock" and computer_choice == "scissors") or \
                 (player_choice == "paper" and computer_choice == "rock") or \
                 (player_choice == "scissors" and computer_choice == "paper"):
-            result = "This computer will now self destruct because you beat me."
+            result = "Even if you beat me, you still trash."
+
         else:# gets players input, outputs what the computer is picking.
                 result = "Suck on these computer hardrive nuts."
 
@@ -55,7 +58,12 @@ class RPS:
 
         self.result_label.config(
         text=f"You chose: {player_choice}\nComputer chose: {computer_choice}\n\n{result}")
-
+        if result == "Even if you beat me, you still trash.":
+            print("YOU WIN!")
+        elif result == "Run it back bru you trash.":
+            print("It's a tie!")
+        elif result == "Suck on these computer hardrive nuts.":
+            print("YOU LOSE!")
 
 
 root = tk.Tk()
