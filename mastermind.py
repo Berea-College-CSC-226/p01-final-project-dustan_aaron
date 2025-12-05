@@ -16,7 +16,7 @@ from time import sleep
 class Mastermind:
     def __init__(self):
         self.root = tk.Tk()
-        self.root.title("Main Menu")
+        self.root.title("Mastermind Menu")
         self.root.minsize(750, 400)
         self.root.maxsize(750, 400)
         self.root.geometry("750x400+250+50")
