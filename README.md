@@ -61,7 +61,10 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
     Stephen Aaron Robinson: 11/17/2025 
         I've ran into a few issues so far, but ultimately feel good about how the project is going.
 ```
-
+    Dustan M. Webb 11/23/2025
+        I've gotten mojority of the code done, I have one massive bug that I need to fix and can't really figure it
+        out so I think I'm going to head to the TA lab and get some help with it. But ultimately feel good on how 
+        everything is going as a whole. 
 ---
 
 ## Milestone 3: Virtual Check-In
