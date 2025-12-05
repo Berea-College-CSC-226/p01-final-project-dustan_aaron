@@ -26,14 +26,13 @@ class Mastermind:
         title = tk.Label(self.root, text="MASTERMIND", font=("Times New Roman", 30))
         title.grid(row=0, column=0, columnspan=2, sticky=tk.EW, padx=250, pady=10)
 
-        settings = tk.Button(self.root, text="settings", command=self.settings)
-        settings.grid(column=0, row=2, padx=350, pady=5)
-
         game_start = tk.Button(self.root, text="Play", command=self.game_loop)
         game_start.grid(column=0, row=1, padx=350, pady=5)
+
+        settings = tk.Button(self.root, text="settings", command=self.settings)
+        settings.grid(column=0, row=2, padx=350, pady=5)
+        
         self.root.mainloop()
-
-
 
     def peg_setting(self, event):
         self.pegs = event.widget.get()
@@ -46,10 +45,11 @@ class Mastermind:
         settings_root.title("Welcome")
         settings_root.minsize(400, 200)
         settings_root.maxsize(600, 300)
+        settings_root.geometry("400x200+450+100")
 
 
 
-        welcome_message = tk.Label(settings_root, text="Welcome to Mastermind. In this game, you must correctly guess the color combination of a number of pegs.")
+        welcome_message = tk.Label(settings_root, text="Make sure to press enter to save your changes!")
         welcome_message.grid(row=0, column=0, columnspan=3)
 
         peg_set_label = tk.Label(settings_root, text="How many pegs do you wish to guess?")
@@ -88,17 +88,41 @@ class Mastermind:
             self.guess_list.clear()
             self.game.update()
 
+    def win_screen(self):
+        self.game.destroy()
+        self.guess_window.destroy()
+        win_screen = tk.Toplevel(self.root)
+        win_screen.title("Winner's Screen")
+        win_screen.geometry("400x150+450+175")
+        text = tk.Label(win_screen, text="YOU WIN", font=("Times New Roman", 30))
+        text.grid(row=0, column=0, padx=50, pady=10)
+        text2 = tk.Label(win_screen, text="You guessed the pattern correctly!", font=("Times New Roman", 15))
+        text2.grid(row=1, column=0, padx=50, pady=10)
+
+    def lose_screen(self):
+        self.game.destroy()
+        self.guess_window.destroy()
+        loss_screen = tk.Toplevel(self.root)
+        loss_screen.title("Loser's Screen")
+        loss_screen.geometry("400x150+450+175")
+        text = tk.Label(loss_screen, text="Game Over", font=("Times New Roman", 30))
+        text.grid(row=0, column=0, padx=50, pady=10)
+        text2 = tk.Label(loss_screen, text="You didn't guess the pattern correctly.", font=("Times New Roman", 15))
+        text2.grid(row=1, column=0, padx=50, pady=10)
+
     def win_lose_check(self):
         if self.try_counter == self.guesses:
             if self.guess_list == self.pattern:
                 print("You won!")
+                self.win_screen()
             else:
                 print("You lost!")
+                self.lose_screen()
         elif self.guess_list == self.pattern:
             print("You won!")
+            self.win_screen()
         else:
             print("Game Continue")
-
 
     def r_button_handler(self):
         self.guess_list.append("red")
@@ -216,7 +240,6 @@ class Mastermind:
         guess.bind("<Return>", self.temp_guess_list)
         """
 
-
     def load_pegs(self):
         placement = 0
         self.current_buttons = []
@@ -235,7 +258,6 @@ class Mastermind:
                     new_peg.grid(row=0, column=placement, padx=5, pady=10)
                     self.current_buttons.append(new_peg)
             placement += 1
-
 
     def game_loop(self):
         self.game = tk.Toplevel(self.root)
