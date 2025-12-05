@@ -1,9 +1,8 @@
-import mastermind
-#import rock_paper_scissors
+from mastermind import Mastermind
+from RPS import RPS
 import tkinter as tk
 import tkinter.ttk as ttk
 
-from mastermind import Mastermind
 
 
 class Menu:
@@ -23,7 +22,7 @@ class Menu:
         mm_label = tk.Label(self.root, text="Guess a random pattern of colors\nin a few amount of guesses.", font=("Times New Roman", 15))
         mm_label.grid(row=2, column=0, padx=10, pady=10)
 
-        rps_start = tk.Button(text="Rock, Paper, Scissors", background="grey", foreground="white")
+        rps_start = tk.Button(text="Rock, Paper, Scissors", background="grey", foreground="white", command=self.rps_call)
         rps_start.grid(row=1, column=1, padx=10, pady=10)
 
         rps_label = tk.Label(self.root, text="Classic game of Roshambo!\nChoose rock, paper, or scissors\nto beat your opponent.", font=("Times New Roman", 15))
@@ -41,6 +40,9 @@ class Menu:
 
     def mm_call(self):
         mm_game = Mastermind()
+
+    def rps_call(self):
+        rps_game = RPS()
 
 
 

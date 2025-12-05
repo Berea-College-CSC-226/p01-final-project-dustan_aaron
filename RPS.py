@@ -17,15 +17,16 @@ import random
 
 class RPS:
 
-    def __init__(self, window):
-        self.window = window
+    def __init__(self):
+        self.window = tk.Tk()
         self.window.title("Rock, Paper, Scissors")
         self.title_Lable = tk.Label(self.window, text="C'mon looser, choose your move.", font =("Bold", 16))
         self.title_Lable.pack()#below this is me getting the buttons looking correct
         self.rock_button = tk.Button(self.window, text="Rock", width = 17, command=lambda: self.play("Rock"))
         self.paper_button = tk.Button(self.window, text = "Paper", width = 17, command=lambda: self.play("Paper") )
         self.scissors_button = tk.Button(self.window, text = "Scissors", width = 17, command=lambda: self.play("Scissors"))
-        self.rock_button.pack()#command lambda is something I found on google in tkinter explorations that is different
+        self.rock_button.pack()
+        #command lambda is something I found on google in tkinter explorations that is different
 #buttons that calls to the same function but has can produce a different output. With Rock paper scissors being
 #same function but different output I needed to find something.
 #tkinter button that calls the same function but can produce two different outputs (what I searched) google output:You
@@ -35,7 +36,7 @@ class RPS:
         self.scissors_button.pack()
         self.result_Label = tk.Label(self.window, text="Result:", font=("Bold", 15), width=45)
         self.result_Label.pack()
-
+        self.window.mainloop()
 
     def play(self, player_choice): #now onto the fun part of making the game, the actual playing part.
         player_choice = player_choice.lower()
@@ -64,9 +65,11 @@ class RPS:
             print("YOU LOSE!")
 
 
-root = tk.Tk()
-app = RPS(root)
-root.mainloop()
+def main():
+    rps = RPS()
+
+if __name__ == "__main__":
+    main()
 
 
 
