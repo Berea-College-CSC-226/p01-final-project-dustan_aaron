@@ -20,8 +20,8 @@ class RPS:
     def __init__(self, window):
         self.window = window
         self.window.title("Rock, Paper, Scissors")
-        self.title_lable = tk.Label(self.window, text="C'mon looser, choose your move.", font =("Bold", 16))
-        self.title_lable.pack()#below this is me getting the buttons looking correct
+        self.title_Lable = tk.Label(self.window, text="C'mon looser, choose your move.", font =("Bold", 16))
+        self.title_Lable.pack()#below this is me getting the buttons looking correct
         self.rock_button = tk.Button(self.window, text="Rock", width = 17, command=lambda: self.play("Rock"))
         self.paper_button = tk.Button(self.window, text = "Paper", width = 17, command=lambda: self.play("Paper") )
         self.scissors_button = tk.Button(self.window, text = "Scissors", width = 17, command=lambda: self.play("Scissors"))
@@ -33,10 +33,8 @@ class RPS:
 #This is typically done using lambda or functools.partial.
         self.paper_button.pack()#packing the window in
         self.scissors_button.pack()
-        self.result_label = tk.Label(self.window, text="Result:", font =("Bold", 16))
-        self.result_lable = tk.lable(self.window, text ="Result", font =("Bold", 16))
-        self.result_label.pack()
-
+        self.result_Label = tk.Label(self.window, text="Result:", font=("Bold", 15), width=45)
+        self.result_Label.pack()
 
 
     def play(self, player_choice): #now onto the fun part of making the game, the actual playing part.
@@ -56,7 +54,7 @@ class RPS:
 
 
 
-        self.result_label.config(
+        self.result_Label.config(
         text=f"You chose: {player_choice}\nComputer chose: {computer_choice}\n\n{result}")
         if result == "Even if you beat me, you still trash.":
             print("YOU WIN!")

@@ -15,8 +15,8 @@ class GON:
         self.window = window
         self.window.title("Game of Nim")
         self.title_lable = tk.Label(self.window, text = "Welcome to the game of nim the instruction will appear when you hit play")
-        self.title_lable.pack()
-        self.
+
+
 
 
 
