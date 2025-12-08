@@ -25,12 +25,7 @@ class RPS:
         self.rock_button = tk.Button(self.window, text="Rock", width = 17, command=lambda: self.play("Rock"))
         self.paper_button = tk.Button(self.window, text = "Paper", width = 17, command=lambda: self.play("Paper") )
         self.scissors_button = tk.Button(self.window, text = "Scissors", width = 17, command=lambda: self.play("Scissors"))
-        self.rock_button.pack()#command lambda is something I found on google in tkinter explorations that is different
-#buttons that calls to the same function but has can produce a different output. With Rock paper scissors being
-#same function but different output I needed to find something.
-#tkinter button that calls the same function but can produce two different outputs (what I searched) google output:You
-#can make a Tkinter button call the same function but produce different outputs by passing an argument to the function when creating the button.
-#This is typically done using lambda or functools.partial.
+        self.rock_button.pack()
         self.paper_button.pack()#packing the window in
         self.scissors_button.pack()
         self.result_Label = tk.Label(self.window, text="Result:", font=("Bold", 15), width=45)
