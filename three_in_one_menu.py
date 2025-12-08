@@ -1,5 +1,6 @@
 from mastermind import Mastermind
 from RPS import RPS
+from game_of_nim import GON
 import tkinter as tk
 import tkinter.ttk as ttk
 
@@ -28,7 +29,7 @@ class Menu:
         rps_label = tk.Label(self.root, text="Classic game of Roshambo!\nChoose rock, paper, or scissors\nto beat your opponent.", font=("Times New Roman", 15))
         rps_label.grid(row=2, column=1, padx=10, pady=10)
 
-        gon_start = tk.Button(text="Game of Nim", background="yellow")
+        gon_start = tk.Button(text="Game of Nim", background="yellow", command=self.gon_call)
         gon_start.grid(row=1, column=3, padx=10, pady=10)
 
         gon_label = tk.Label(self.root, text="Take turns taking balls out of a bowl.\nMake sure you take the last one!", font=("Times New Roman", 15))
@@ -43,6 +44,9 @@ class Menu:
 
     def rps_call(self):
         rps_game = RPS()
+
+    def gon_call(self):
+        gon_game = GON()
 
 
 

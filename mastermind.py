@@ -113,16 +113,11 @@ class Mastermind:
     def win_lose_check(self):
         if self.try_counter == self.guesses:
             if self.guess_list == self.pattern:
-                print("You won!")
                 self.win_screen()
             else:
-                print("You lost!")
                 self.lose_screen()
         elif self.guess_list == self.pattern:
-            print("You won!")
             self.win_screen()
-        else:
-            print("Game Continue")
 
     def r_button_handler(self):
         self.guess_list.append("red")
