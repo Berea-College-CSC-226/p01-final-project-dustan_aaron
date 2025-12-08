@@ -95,9 +95,29 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 ❗In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
 in PyCharm. 
 
-### ❗Errors and Constraints
+```
+The user starts with a window with a window allowing them to select a game from the three choices of Rock Paper Scissors, 
+Game of Nim, and Mastermind. They then get to play the game they selected. Instructions for these games are below.
 
-❗Every program has bugs or features that had to be scrapped for time. These bugs should be tracked in the issue queue. 
+Rock Paper Scissors: The user plays against an AI that taunts them constantly. They have 3 choices, Rock, Paper, and Scissors.
+    The user will click one of the buttons to try and beat the AI, using the classic rules of Rock beats Scissors, Scissors beats Paper,
+    and Paper beats Rock.
+   
+Game of Nim: 
+
+
+Mastermind: The user is brought to a menu for Mastermind, with 2 buttons, "Play" and "Settings". If they choose settings,
+    they can change the number of pegs (buttons) they have to guess the color of, and the number of guesses they get. If they
+    don't change these settings, the default number for both is 4. When hitting play, the user is met with 2 windows, one with 4 blank pegs (Or whatever number they put in the settings),
+    and the other with 4 buttons that are colored. They can use these color buttons to input a guess, that is showed to them as
+    they input it, of the blank pegs in the other window. After inputing a guess of colors, the pegs on the other window updates
+    to show which, if any, of the colors matched with the blank pegs' hidden colors. If the user guesses the correct pattern, they win,
+    but if they use all of their guesses, they lose. 
+```
+
+### Errors and Constraints
+
+Every program has bugs or features that had to be scrapped for time. These bugs should be tracked in the issue queue. 
 You should already have a few items in here from the prior weeks. Create a new issue for any undocumented errors and 
 deficiencies that remain in your code. Bugs found that aren't acknowledged in the queue will be penalized.
 
