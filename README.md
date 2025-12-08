@@ -48,7 +48,12 @@ section as you go. DO NOT forget about it!
 
 The Game of Nim, Rock Paper Scissors, and Mastermind games are not our ideas, but the code is ours.
 
----
+---Command lambda is something I found on google in tkinter explorations that is different
+buttons that calls to the same function but has can produce a different output. With Rock paper scissors being
+same function but different output I needed to find something.
+"tkinter button that calls the same function but can produce two different outputs" (what I searched) google output:You
+can make a Tkinter button call the same function but produce different outputs by passing an argument to the function when creating the button.
+This is typically done using lambda or functools.partial.
 
 ## Milestone 2: Code Setup and Issue Queue
 
