@@ -63,12 +63,7 @@ class RPS:
 
         self.result_Label.config(
         text=f"You chose: {player_choice}\nComputer chose: {computer_choice}\n\n{result}")
-        if result == "Even if you beat me, you still trash.":
-            print("YOU WIN!")
-        elif result == "Run it back bru you trash.":
-            print("It's a tie!")
-        elif result == "Suck on these computer hardrive nuts.":
-            print("YOU LOSE!")
+
 
 def main():
     rps = RPS()
