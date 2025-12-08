@@ -15,11 +15,7 @@ class GON:
         self.window = window
         self.window.title("Game of Nim")
         self.title_lable = tk.Label(self.window, text = "Welcome to the game of nim the instruction will appear when you hit play")
-
-
-
-
-
+        self.play_button = tk.Button(self.window, text = "Play", width = 15)
 
 def ask_ball_number():
         num = int(input("How many balls will be put in the basket?\n"))
