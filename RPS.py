@@ -25,8 +25,7 @@ class RPS:
         self.rock_button = tk.Button(self.window, text="Rock", width = 17, command=lambda: self.play("Rock"))
         self.paper_button = tk.Button(self.window, text = "Paper", width = 17, command=lambda: self.play("Paper") )
         self.scissors_button = tk.Button(self.window, text = "Scissors", width = 17, command=lambda: self.play("Scissors"))
-        self.rock_button.pack()
-        #command lambda is something I found on google in tkinter explorations that is different
+        self.rock_button.pack()#command lambda is something I found on google in tkinter explorations that is different
 #buttons that calls to the same function but has can produce a different output. With Rock paper scissors being
 #same function but different output I needed to find something.
 #tkinter button that calls the same function but can produce two different outputs (what I searched) google output:You
@@ -35,6 +34,13 @@ class RPS:
         self.paper_button.pack()#packing the window in
         self.scissors_button.pack()
         self.result_Label = tk.Label(self.window, text="Result:", font=("Bold", 15), width=45)
+        self.window.configure(bg="purple")
+        self.title_Lable.config(bg="purple", fg="white")
+        self.rock_button.config(bg="blue", fg="black")
+        self.paper_button.config(bg="white", fg="black")
+        self.scissors_button.config(bg="red", fg="black")
+        self.result_Label.config(bg="purple", fg="white")
+        #I searched up how to put a color in tkinter because I forgot how to, if this is not how the book shows this was what the first thing I seen online.
         self.result_Label.pack()
         self.window.mainloop()
 
@@ -64,12 +70,13 @@ class RPS:
         elif result == "Suck on these computer hardrive nuts.":
             print("YOU LOSE!")
 
-
 def main():
     rps = RPS()
 
 if __name__ == "__main__":
     main()
+
+
 
 
 
