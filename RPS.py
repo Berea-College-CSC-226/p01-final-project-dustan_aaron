@@ -17,8 +17,8 @@ import random
 
 class RPS:
 
-    def __init__(self, window):
-        self.window = window
+    def __init__(self):
+        self.window = tk.Tk()
         self.window.title("Rock, Paper, Scissors")
         self.title_Lable = tk.Label(self.window, text="C'mon looser, choose your move.", font =("Bold", 16))
         self.title_Lable.pack()#below this is me getting the buttons looking correct
@@ -34,8 +34,15 @@ class RPS:
         self.paper_button.pack()#packing the window in
         self.scissors_button.pack()
         self.result_Label = tk.Label(self.window, text="Result:", font=("Bold", 15), width=45)
+        self.window.configure(bg="purple")
+        self.title_Lable.config(bg="purple", fg="white")
+        self.rock_button.config(bg="blue", fg="black")
+        self.paper_button.config(bg="white", fg="black")
+        self.scissors_button.config(bg="red", fg="black")
+        self.result_Label.config(bg="purple", fg="white")
+        #I searched up how to put a color in tkinter because I forgot how to, if this is not how the book shows this was what the first thing I seen online.
         self.result_Label.pack()
-
+        self.window.mainloop()
 
     def play(self, player_choice): #now onto the fun part of making the game, the actual playing part.
         player_choice = player_choice.lower()
@@ -63,10 +70,13 @@ class RPS:
         elif result == "Suck on these computer hardrive nuts.":
             print("YOU LOSE!")
 
+def main():
+    rps = RPS()
 
-root = tk.Tk()
-app = RPS(root)
-root.mainloop()
+if __name__ == "__main__":
+    main()
+
+
 
 
 
