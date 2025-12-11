@@ -8,16 +8,11 @@
 #
 ######################################################################
 
-
-
-
-
-
 def ask_ball_number():
         num = int(input("How many balls will be put in the basket?\n"))
         while num <= 15:
-        print("The number of balls needs to be higher than 15.")
-        num = int(input("How many balls will be put in the basket?\n"))
+            print("The number of balls needs to be higher than 15.")
+            num = int(input("How many balls will be put in the basket?\n"))
         return num
 
 def cpu_choose(num):
