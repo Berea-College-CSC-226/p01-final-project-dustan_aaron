@@ -7,17 +7,21 @@
 # Purpose: To challenge the user to The Game of Nim
 #
 ######################################################################
+import tkinter as tk
+import random
 
-
-
-
-
+class GON:
+    def __init__(self, window):
+        self.window = window
+        self.window.title("Game of Nim")
+        self.title_lable = tk.Label(self.window, text = "Welcome to the game of nim the instruction will appear when you hit play")
+        self.play_button = tk.Button(self.window, text = "Play", width = 15)
 
 def ask_ball_number():
         num = int(input("How many balls will be put in the basket?\n"))
         while num <= 15:
-        print("The number of balls needs to be higher than 15.")
-        num = int(input("How many balls will be put in the basket?\n"))
+            print("The number of balls needs to be higher than 15.")
+            num = int(input("How many balls will be put in the basket?\n"))
         return num
 
 def cpu_choose(num):

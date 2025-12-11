@@ -83,7 +83,11 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
   before the deadline.
 
 ```
-    **Replace this with your reflection
+    **Everything is going very smooth, we have officially started on the Game of Nim and the Main menu. 
+    Looking at about probably a 70-80 ish percent done. Once break is all the way over and were able to get back to it
+    probably going to be pretty close to done once were back. Speaking for both of us, I feel like we are very cofident.
+    everything is going just as good if not better as we planned it to go. We like how everything is turning out. 
+    The programs are looking good no bugs or anything what so ever. **
 ```
 
 ---
@@ -94,6 +98,7 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 
 ❗In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
 in PyCharm. 
+    Whenever you hit the run button on the main menu code.
 
 ```
 The user starts with a window with a window allowing them to select a game from the three choices of Rock Paper Scissors, 
@@ -132,11 +137,32 @@ deficiencies that remain in your code. Bugs found that aren't acknowledged in th
 - How well did you work with your partner? What made it go well? What made it challenging?
 
 ```
-    Partner 1: **Replace this with your reflection
+    Partner 1: **
 ```
 
 ```
-    Partner 2: **Replace this with your reflection
+    Partner 2: **We selected it because we were both intrugued on tkinter and were really wondering on how that would turn
+    out for us. He knew a lot about mastermind, both of our games of nims were flawless on our homework assignment code.
+    Then rock, paper sciccors just stuck out to me and thought would've been a lot of fun to try and man handle for the class 
+    to enjoy. 
+    Honestly pretty close to the tea, everything went exactly as we planned and imagnined in my opinion. Now the only thing
+    was time wise, one week we got too far ahead (which is obviously better than being behind, then one week we were behind.
+    To be 100% honest, I did worse being far ahead than I did being behind, when I'm behind I'm very by the book, get to the point
+    type of person. When we were ahead, I overthought every line of code I produced, my research wasn't how I wanted it to go
+    , I thought that rock paper sciccors could've looked better that kind of stuff. I learned that you need to be patient and 
+    learn how to take breaks away from your partner and even with your partner. Espeically getting caught up in errors, 
+    that made me the angriest. 
+    The hardest part was honestly just being patient, I kept getting caught up in something, it wouldn't work and I'd forget 
+    how to reset and take a deep breath. At the end of the day, thats the world of being a computer scientist. I had one error,
+    where it would just print the cpu winning statment, all because in the list I made all 3 capitalized and in the function
+    of calling from the list in lower case. I ended up getting some help for it because I was so lost on why just that print 
+    statement was working in the elif loop. 
+    The thing I would do different, is planning wise, honestly I would have a better on paper in thought process of planning it.
+    Because we had the classes, the function and everything planned. But the long process of 3 games and a main menu, it
+    was extremely hard to plan for all 4 while trying to focus on one thing at a time so you wouldn't get caught up on the 
+    long run of it all. We worked pretty well, I have nothing to complain about, we split up but worked together perfectly,
+    communication was always on point. There was nothing challenging, besides one time my ac broke and we had to rescedule 
+    but also find time to finish it all up. 
 ```
 
 ---
